@@ -4,12 +4,15 @@
   "description": "TV programme database",
   "main": "dom.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test node src/tests/getData.test.js | tap-spec",
+    "build": "node src/database/db_build.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "env2": "^2.2.2",
     "nodemon": "^1.18.11",
+    "pg": "^7.9.0",
     "tap-spec": "^5.0.0",
     "tape": "^4.10.1"
   }
