@@ -5,7 +5,8 @@
   "main": "dom.js",
   "scripts": {
     "test": "NODE_ENV=test node src/tests/getData.test.js | tap-spec",
-    "build": "node src/database/db_build.js"
+    "build": "node src/database/db_build.js",
+    "start": "nodemon ./src/server.js"
   },
   "author": "",
   "license": "ISC",

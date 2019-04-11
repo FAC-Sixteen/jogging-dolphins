@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-const queryString = require('queryString');
+const queryString = require('querystring');
 const postData = require('./queries/postData');
+const getData = require('./queries/getData');
 
 const serverError = res => {
   res.writeHead(500, { 'content-type': 'text/html' });
@@ -67,8 +68,15 @@ const handlePostRoute = (req, res) => {
     data += chunk;
   });
   req.on('end', () => {
-    const { name, location } = queryString.parse(data);
-    postData(name, location, err => {
+    const {
+      userName,
+      programmeName,
+      description,
+      length,
+      continuity
+    } = queryString.parse(data);
+
+    postData(userName, programmeName, description, length, continuity, err => {
       if (err) return serverError(res);
       res.writeHead(302, { Location: '/' });
       res.end();
@@ -76,9 +84,18 @@ const handlePostRoute = (req, res) => {
   });
 };
 
+const handleGetDataRoute = (req, res) => {
+  getData((err, database) => {
+    if (err) return serverError(err, response);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(database));
+  });
+};
+
 module.exports = {
   handleHomeRoute,
   handle404Route,
   handlePublicRoute,
-  handlePostRoute
+  handlePostRoute,
+  handleGetDataRoute
 };

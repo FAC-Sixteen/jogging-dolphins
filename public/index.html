@@ -13,39 +13,44 @@
   <body>
     <h1>TV Suggestions</h1>
 
-    <section class="view-suggestions"></section>
-
     <section class="add-suggestions">
-      <form class="add-suggestions__form" method="post" action="/">
-        <label for="user_name">Name:</label>
+      <form class="add-suggestions__form" method="post" action="submit-form">
+        <label for="userName">Name:</label>
         <input
-          id="user_name"
+          id="userName"
           type="text"
-          name="name"
+          name="userName"
           value=""
-          placeholder="Enter your name..."
-          autocomplete="off"
           pattern="[a-zA-Z'\s]{3,40}"
         />
 
-        <label for="name">Programme name:</label>
-        <input id="name" type="text" name="name" required />
+        <label for="programmeName">Programme name:</label>
+        <input id="programmeName" type="text" name="programmeName" value="" />
 
         <label for="description">Description:</label>
-        <input id="description" type="text" name="description" />
+        <input id="description" type="text" name="description" value="" />
 
-        <label for="paid">Length:</label>
-        <input id="paid" type="text" name="length" />
+        <label for="length">Length:</label>
+        <input id="length" type="text" name="length" value="" />
 
-        <label for="paid">Continuity:</label>
-        <select id="paid" type="text" name="continuity"></select>
+        <label for="continuity">Continuity:</label>
+        <select id="continuity" type="text" name="continuity" value=""></select>
 
         <input
           class="add-suggestions__form__submit"
           type="submit"
           name="submit"
+          id="submit"
         />
       </form>
+    </section>
+
+    <section class="view-suggestions">
+      <div class="programmeName tableElement">Programme</div>
+      <div class="description tableElement">Description</div>
+      <div class="length tableElement">Length</div>
+      <div class="continuity tableElement">Continuity</div>
+      <div class="userName tableElement">Suggested by</div>
     </section>
   </body>
 </html>
