@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const queryString = require('queryString');
+const postData = require('./queries/postData');
 
 const serverError = res => {
   res.writeHead(500, { 'content-type': 'text/html' });
@@ -59,8 +61,24 @@ const handlePublicRoute = (req, res, endpoint) => {
   });
 };
 
+const handlePostRoute = (req, res) => {
+  let data = '';
+  req.on('data', chunk => {
+    data += chunk;
+  });
+  req.on('end', () => {
+    const { name, location } = queryString.parse(data);
+    postData(name, location, err => {
+      if (err) return serverError(res);
+      res.writeHead(302, { Location: '/' });
+      res.end();
+    });
+  });
+};
+
 module.exports = {
   handleHomeRoute,
   handle404Route,
-  handlePublicRoute
+  handlePublicRoute,
+  handlePostRoute
 };
