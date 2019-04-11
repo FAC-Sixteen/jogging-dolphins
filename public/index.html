@@ -1,46 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="public/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="normalise.css">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="public/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="public/normalise.css" />
+    <link rel="stylesheet" href="public/style.css" />
     <title>TV Suggestions</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>TV Suggestions</h1>
 
-    <section class="view-suggestions">
-
-    </section>
+    <section class="view-suggestions"></section>
 
     <section class="add-suggestions">
-        <form class="add-suggestions__form" method="post" action="/">
+      <form class="add-suggestions__form" method="post" action="/">
+        <label for="user_name">Name:</label>
+        <input
+          id="user_name"
+          type="text"
+          name="name"
+          value=""
+          placeholder="Enter your name..."
+          autocomplete="off"
+          pattern="[a-zA-Z'\s]{3,40}"
+        />
 
-            <label for="user_name">Name:</label>
-            <input id="user_name" type="text" name="name" value="" placeholder="Enter your name..." autocomplete="off"
-                pattern="[a-zA-Z'\s]{3,40}">
+        <label for="name">Programme name:</label>
+        <input id="name" type="text" name="name" required />
 
-            <label for="name">Programme name:</label>
-            <input id="name" type="text" name="name" required>
+        <label for="description">Description:</label>
+        <input id="description" type="text" name="description" />
 
-            <label for="description">Description:</label>
-            <input id="description" type="text" name="description">
+        <label for="paid">Length:</label>
+        <input id="paid" type="text" name="length" />
 
-            <label for="paid">Length:</label>
-            <input id="paid" type="text" name="length">
+        <label for="paid">Continuity:</label>
+        <select id="paid" type="text" name="continuity"></select>
 
-            <label for="paid">Continuity:</label>
-            <select id="paid" type="text" name="continuity"></select>
-
-            <input class="add-suggestions__form__submit" type="submit" name="submit" />
-        </form>
+        <input
+          class="add-suggestions__form__submit"
+          type="submit"
+          name="submit"
+        />
+      </form>
     </section>
-
-</body>
-
+  </body>
 </html>
