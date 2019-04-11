@@ -11,7 +11,7 @@ const buildDatabase = () => {
         if (err) {
             console.log('Database creation error: ', err)
         } else {
-            console.log("Database created");
+            console.log("Dat    abase created");
             dbConnection.end(() => {
                 console.log("Connection closed")
             })
