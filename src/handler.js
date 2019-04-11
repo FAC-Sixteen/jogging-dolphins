@@ -85,10 +85,12 @@ const handlePostRoute = (req, res) => {
 };
 
 const handleGetDataRoute = (req, res) => {
-  getData((err, database) => {
-    if (err) return serverError(err, response);
+  getData((err, suggestions) => {
+    if (err) {
+      serverError(res);
+    }
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify(database));
+    res.end(JSON.stringify(suggestions));
   });
 };
 
