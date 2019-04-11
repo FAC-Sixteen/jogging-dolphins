@@ -1,57 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="icon" href="public/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="public/normalise.css" />
-    <link rel="stylesheet" href="public/style.css" />
-    <title>TV Suggestions</title>
-  </head>
 
-  <body>
-    <h1>TV Suggestions</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Heebo:300,400,700|Nanum+Gothic+Coding:400,700"
+    rel="stylesheet">
+  <link rel="icon" href="public/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="public/normalise.css" />
+  <link rel="stylesheet" href="public/style.css" />
+  <title>TV Suggestions</title>
+</head>
 
-    <section class="add-suggestions">
-      <form class="add-suggestions__form" method="post" action="submit-form">
-        <label for="userName">Name:</label>
-        <input
-          id="userName"
-          type="text"
-          name="userName"
-          value=""
-          pattern="[a-zA-Z'\s]{3,40}"
-        />
+<body>
+  <h1>TV Suggestions</h1>
 
-        <label for="programmeName">Programme name:</label>
-        <input id="programmeName" type="text" name="programmeName" value="" />
+  <section class="add-suggestions">
+    <form class="add-suggestions__form" method="post" action="submit-form">
+      <label for="userName">
+        <p class="required">*</p>Name:
+      </label>
+      <input id="userName" type="text" name="userName" value="" pattern="[a-zA-Z'\s]{3,40}" required />
 
-        <label for="description">Description:</label>
-        <input id="description" type="text" name="description" value="" />
+      <label for="programmeName">
+        <p class="required">*</p>Programme name:
+      </label>
+      <input id="programmeName" type="text" name="programmeName" value="" required />
 
-        <label for="length">Length:</label>
-        <input id="length" type="text" name="length" value="" />
+      <label for="description">Description:</label>
+      <input id="description" type="text" name="description" value="" />
 
-        <label for="continuity">Continuity:</label>
-        <select id="continuity" type="text" name="continuity" value=""></select>
+      <label for="length">Length:</label>
+      <input id="length" type="text" name="length" value="" />
 
-        <input
-          class="add-suggestions__form__submit"
-          type="submit"
-          name="submit"
-          id="submit"
-        />
-      </form>
-    </section>
+      <label for="continuity">Continuity:</label>
+      <select id="continuity" type="text" name="continuity" value="">
+        <option value="">-</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
 
-    <section class="view-suggestions">
-      <div class="programmeName tableElement">Programme</div>
-      <div class="description tableElement">Description</div>
-      <div class="length tableElement">Length</div>
-      <div class="continuity tableElement">Continuity</div>
-      <div class="userName tableElement">Suggested by</div>
-    </section>
-    <script src="public/dom.js"></script>
-  </body>
+      <input class="add-suggestions__form__submit" type="submit" name="submit" id="submit" />
+    </form>
+  </section>
+
+  <section class="view-suggestions">
+    <h2>Current suggestions:</h2>
+    <div class="view-suggestions__table left-border">
+      <div class="programmeName tableElement">
+        <h3>Programme</h3>
+      </div>
+      <div class="description tableElement">
+        <h3>Description</h3>
+      </div>
+      <div class="length tableElement">
+        <h3>Length</h3>
+      </div>
+      <div class="continuity tableElement">
+        <h3>Continuity</h3>
+      </div>
+      <div class="userName tableElement right-border">
+        <h3>Suggested by</h3>
+      </div>
+    </div>
+  </section>
+  <script src="public/dom.js"></script>
+</body>
+
 </html>
