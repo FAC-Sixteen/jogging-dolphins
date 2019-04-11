@@ -21,7 +21,7 @@ module.exports = runDbBuild;
 
 
 
-
+// const buildDatabase = () => {
 
 //     dbConnection.query(sql, (err, result) => {
 //         if (err) {
