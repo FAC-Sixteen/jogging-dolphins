@@ -4,7 +4,7 @@
   "description": "TV programme database",
   "main": "dom.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test node tests/db_tests.js | tap-spec"
   },
   "author": "",
   "license": "ISC",
