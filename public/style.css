@@ -1,0 +1,25 @@
+h1 {
+  text-align: center;
+  margin-top: 6rem;
+}
+
+.add-suggestions {
+  display: flex;
+  flex: wrap;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.view-suggestions {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.tableElement {
+  width: 100px;
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+}

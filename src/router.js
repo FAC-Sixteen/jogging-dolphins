@@ -9,6 +9,8 @@ const router = (req, res) => {
       handler.handleHomeRoute(req, res);
     } else if (endpoint.includes('/public')) {
       handler.handlePublicRoute(req, res, endpoint);
+    } else if (endpoint === '/getData') {
+      handler.handleGetDataRoute(req, res);
     } else {
       handler.handle404Route(req, res);
     }
