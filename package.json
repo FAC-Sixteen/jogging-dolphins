@@ -1,0 +1,16 @@
+{
+  "name": "joggingdolphins",
+  "version": "1.0.0",
+  "description": "TV programme database",
+  "main": "dom.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.11",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.10.1"
+  }
+}
