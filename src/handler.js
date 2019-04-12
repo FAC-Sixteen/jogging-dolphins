@@ -69,14 +69,13 @@ const handlePostRoute = (req, res) => {
   });
   req.on('end', () => {
     const {
-      userName,
       programmeName,
       description,
       length,
       continuity
     } = queryString.parse(data);
 
-    postData(userName, programmeName, description, length, continuity, err => {
+    postData(programmeName, description, length, continuity, err => {
       if (err) return serverError(res);
       res.writeHead(302, { Location: '/#suggestions' });
       res.end();
