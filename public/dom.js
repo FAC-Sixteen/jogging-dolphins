@@ -42,5 +42,5 @@ const responseToFrontend = json => {
   pName(json, 'description', displayDescription);
   pName(json, 'length', displayLength);
   pName(json, 'continuity', displayContinuity);
-  pName(json, 'name', displayUserName);
+  // pName(json, 'name', displayUserName);
 };
