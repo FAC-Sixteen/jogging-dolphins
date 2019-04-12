@@ -6,7 +6,7 @@ const getData = cb => {
             console.log("GET data error: ", err);
             cb(err);
         } else {
-            const suggestions = result.rows.slice();
+            const suggestions = res.rows.slice();
             cb(null, suggestions)
         }
     })
