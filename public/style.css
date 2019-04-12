@@ -1,25 +1,140 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(0, 0, 30);
+  color: #EFF1F3;
+  font-family: 'Nanum Gothic Coding', monospace;
+  letter-spacing: 2px;
+}
+
 h1 {
+  font-family: 'Fredoka One', cursive;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 3em;
   text-align: center;
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 
 .add-suggestions {
+  font-size: 1.5em;
   display: flex;
   flex: wrap;
   justify-content: center;
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 
-.view-suggestions {
+.add-suggestions__form {
   display: flex;
-  width: 100vw;
+  flex-direction: column;
+}
+
+.add-suggestions__form label {
+  margin: 10px;
+}
+
+.add-suggestions__form input,
+.add-suggestions__form select {
+  font-family: 'Nanum Gothic Coding', monospace;
+  font-size: 1em;
+  border: solid #ADACB2 5px;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 10px;
+  color: #EFF1F3;
+  letter-spacing: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-suggestions__form input:focus,
+.add-suggestions__form select:focus {
+  border: solid rgb(205, 70, 70) 5px;
+}
+
+select {
+  height: 53.33px;
+}
+
+label {
+  display: flex;
+  flex-direction: row;
+}
+
+.required {
+  margin-right: 10px;
+  color: rgb(205, 70, 70);
+}
+
+.add-suggestions__form .add-suggestions__form__submit {
+  font-family: 'Fredoka One', cursive;
+  text-transform: uppercase;
+  border: solid #FED766 5px;
+  background-color: #FED766;
+  color: rgb(0, 0, 30);
+  margin: 20px;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+.add-suggestions__form .add-suggestions__form__submit:hover {
+  transform: scale(1.1);
+  border: solid rgb(205, 70, 70) 5px;
+}
+
+.add-suggestions__form .add-suggestions__form__submit:active {
+  transform: scale(1);
+}
+
+
+.view-suggestions {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3em;
+  padding-top: 3em;
+  border-width: 70px;
+  border-top: solid rgb(205, 70, 70) 1px;
+}
+
+h2 {
+  font-family: 'Fredoka One', cursive;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 5px;
+  margin-bottom: 1em;
+}
+
+.view-suggestions__table {
   justify-content: center;
-  margin-top: 6rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+h3 {
+  font-size: 1.5em;
 }
 
 .tableElement {
-  width: 100px;
-  border: solid 1px black;
+  border-top: solid 5px #FED766;
+  border-bottom: solid 5px #FED766;
+  border-left: solid 2.5px #FED766;
+  border-right: solid 2.5px #FED766;
+  padding: 10px;
   display: flex;
   justify-content: center;
+}
+
+.left-border {
+  border-left: solid 5px #FED766;
+  border-radius: 5px;
+}
+
+.right-border {
+  border-right: solid 5px #FED766;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
