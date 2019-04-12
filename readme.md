@@ -27,6 +27,8 @@ A web app for FAC members that allows the user to enter their suggestions for pr
 2. Install dependencies by running `npm i`
 3. Create a `config.env` file in your root directory and as us for the URL to paste inside
 
+Alternatively the project may or may not be available at: https://obscure-tor-42134.herokuapp.com/
+
 ## ⚓️Goals
 - [x] deploy app on Heroku
 - [x] the app displays suggestions for lunch TV from a PSQL database
@@ -75,7 +77,3 @@ Our initial ideas for the app:
 - `git add .` not working when in a subdirectory, got around it by using `git add --all` but should have changed into the root directory before using git commands
 - `pg` module is not native 😤
 - `Fatal: role dolphin does not exist` ❓❓❓ not realising that each person has to create the database and user locally
-- Ryan's jokes 
-> If I were to open a sandwich shop... outside of Google... it would be called "req and roll"
-- Ryan disappearing constantly
-![](https://media.giphy.com/media/c6DIpCp1922KQ/giphy.gif)
