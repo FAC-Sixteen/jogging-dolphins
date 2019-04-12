@@ -4,7 +4,7 @@ html {
 
 body {
   background-color: rgb(0, 0, 30);
-  color: #EFF1F3;
+  color: #eff1f3;
   font-family: 'Nanum Gothic Coding', monospace;
   letter-spacing: 2px;
 }
@@ -39,11 +39,11 @@ h1 {
 .add-suggestions__form select {
   font-family: 'Nanum Gothic Coding', monospace;
   font-size: 1em;
-  border: solid #ADACB2 5px;
+  border: solid #adacb2 5px;
   border-radius: 5px;
   background-color: transparent;
   padding: 10px;
-  color: #EFF1F3;
+  color: #eff1f3;
   letter-spacing: 3px;
   transition: all 0.3s ease-in-out;
 }
@@ -70,8 +70,8 @@ label {
 .add-suggestions__form .add-suggestions__form__submit {
   font-family: 'Fredoka One', cursive;
   text-transform: uppercase;
-  border: solid #FED766 5px;
-  background-color: #FED766;
+  border: solid #fed766 5px;
+  background-color: #fed766;
   color: rgb(0, 0, 30);
   margin: 20px;
   transition: all 0.3s ease-in-out;
@@ -86,7 +86,6 @@ label {
 .add-suggestions__form .add-suggestions__form__submit:active {
   transform: scale(1);
 }
-
 
 .view-suggestions {
   text-align: center;
@@ -116,25 +115,38 @@ h2 {
 
 h3 {
   font-size: 1.5em;
+  /* color: rgb(205, 70, 70); */
+  text-transform: uppercase;
+  border-bottom: solid 5px rgb(205, 70, 70);
 }
 
 .tableElement {
-  border-top: solid 5px #FED766;
-  border-bottom: solid 5px #FED766;
-  border-left: solid 2.5px #FED766;
-  border-right: solid 2.5px #FED766;
+  border-top: solid 5px #fed766;
+  border-bottom: solid 5px #fed766;
+  border-left: solid 2.5px #fed766;
+  border-right: solid 2.5px #fed766;
   padding: 10px;
   display: flex;
   justify-content: center;
 }
 
 .left-border {
-  border-left: solid 5px #FED766;
+  border-left: solid 5px #fed766;
   border-radius: 5px;
 }
 
 .right-border {
-  border-right: solid 5px #FED766;
+  border-right: solid 5px #fed766;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.tableElement {
+  display: flex;
+  flex-direction: column;
+}
+
+.tableItemStyle {
+  margin: 1rem;
+  font-size: 1rem;
 }
