@@ -77,8 +77,7 @@ const handlePostRoute = (req, res) => {
 
     postData(programmeName, description, length, continuity, err => {
       if (err) return serverError(res);
-      res.writeHead(302, { Location: '/' });
-      console.log("handler error");
+      res.writeHead(302, { Location: '/#suggestions' });
       res.end();
     });
   });
