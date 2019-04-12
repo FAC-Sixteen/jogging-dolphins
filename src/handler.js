@@ -78,7 +78,7 @@ const handlePostRoute = (req, res) => {
 
     postData(userName, programmeName, description, length, continuity, err => {
       if (err) return serverError(res);
-      res.writeHead(302, { Location: '/' });
+      res.writeHead(302, { Location: '/#suggestions' });
       res.end();
     });
   });
