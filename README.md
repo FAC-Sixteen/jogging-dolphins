@@ -75,7 +75,3 @@ Our initial ideas for the app:
 - `git add .` not working when in a subdirectory, got around it by using `git add --all` but should have changed into the root directory before using git commands
 - `pg` module is not native 😤
 - `Fatal: role dolphin does not exist` ❓❓❓ not realising that each person has to create the database and user locally
-- Ryan's jokes 
-> If I were to open a sandwich shop... outside of Google... it would be called "req and roll"
-- Ryan disappearing constantly
-![](https://media.giphy.com/media/c6DIpCp1922KQ/giphy.gif)
