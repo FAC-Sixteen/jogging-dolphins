@@ -27,6 +27,8 @@ A web app for FAC members that allows the user to enter their suggestions for pr
 2. Install dependencies by running `npm i`
 3. Create a `config.env` file in your root directory and as us for the URL to paste inside
 
+Alternatively the project may or may not be available at: https://obscure-tor-42134.herokuapp.com/
+
 ## ⚓️Goals
 - [x] deploy app on Heroku
 - [x] the app displays suggestions for lunch TV from a PSQL database
