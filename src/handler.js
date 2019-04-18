@@ -5,7 +5,9 @@ const postData = require('./queries/postData');
 const getData = require('./queries/getData');
 
 const serverError = res => {
-  res.writeHead(500, { 'content-type': 'text/html' });
+  res.writeHead(500, {
+    'content-type': 'text/html'
+  });
   res.end('<h1>Server cannot fulfill your request.</h1>');
 };
 
@@ -16,7 +18,9 @@ const handleHomeRoute = (req, res) => {
       if (err) {
         serverError(res);
       } else {
-        res.writeHead(200, { 'content-type': 'text/html' });
+        res.writeHead(200, {
+          'content-type': 'text/html'
+        });
         res.end(file);
       }
     }
@@ -30,7 +34,9 @@ const handle404Route = (req, res) => {
       if (err) {
         serverError(res);
       } else {
-        res.writeHead(404, { 'content-type': 'text/html' });
+        res.writeHead(404, {
+          'content-type': 'text/html'
+        });
         res.end(file);
       }
     }
@@ -56,7 +62,9 @@ const handlePublicRoute = (req, res, endpoint) => {
     if (err) {
       serverError(res);
     } else {
-      res.writeHead(200, { 'content-type': extensionSelector[extensionType] });
+      res.writeHead(200, {
+        'content-type': extensionSelector[extensionType]
+      });
       res.end(file);
     }
   });
@@ -77,7 +85,9 @@ const handlePostRoute = (req, res) => {
 
     postData(programmeName, description, length, continuity, err => {
       if (err) return serverError(res);
-      res.writeHead(302, { Location: '/#suggestions' });
+      res.writeHead(302, {
+        Location: '/#suggestions'
+      });
       res.end();
     });
   });
@@ -88,7 +98,9 @@ const handleGetDataRoute = (req, res) => {
     if (err) {
       serverError(res);
     }
-    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.writeHead(200, {
+      'Content-Type': 'application/json'
+    });
     res.end(JSON.stringify(suggestions));
   });
 };
@@ -100,7 +112,25 @@ const handleRegister = (req, res) => {
       if (err) {
         serverError(res);
       } else {
-        res.writeHead(200, { 'content-type': 'text/html' });
+        res.writeHead(200, {
+          'content-type': 'text/html'
+        });
+        res.end(file);
+      }
+    }
+  );
+}
+
+const handleLogin = (req, res) => {
+  fs.readFile(
+    path.join(__dirname, '..', 'public', 'login-form.html'),
+    (err, file) => {
+      if (err) {
+        serverError(res);
+      } else {
+        res.writeHead(200, {
+          'content-type': 'text/html'
+        });
         res.end(file);
       }
     }
@@ -117,5 +147,6 @@ module.exports = {
   handlePublicRoute,
   handlePostRoute,
   handleGetDataRoute,
-  handleRegister
+  handleRegister,
+  handleLogin
 };
