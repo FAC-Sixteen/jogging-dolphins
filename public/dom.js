@@ -6,6 +6,7 @@ const lengthInput = document.getElementById('length');
 const continuityInput = document.getElementById('continuity');
 const submitButton = document.getElementById('submit');
 const registerButton = document.querySelector('.register-button');
+const loginButton = document.querySelector('.login-button');
 
 //display items
 const displayProgrammeName = document.getElementById('displayProgrammeName');
@@ -57,4 +58,8 @@ const responseToFrontend = json => {
 
 registerButton.addEventListener('click', () => {
   window.location.href = '/register';
+});
+
+loginButton.addEventListener('click', () => {
+  window.location.href = '/login';
 });

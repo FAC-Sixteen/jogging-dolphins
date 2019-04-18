@@ -22,6 +22,25 @@ nav {
   height: 10vh;
 }
 
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.register-button,
+.login-button {
+  font-family: 'Nanum Gothic Coding', monospace;
+  border: none;
+  background-color: rgb(0, 0, 30);
+  color: #eff1f3;
+  padding: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 .new-suggestion {
   /* font-size: 1.5em;
   display: flex;
