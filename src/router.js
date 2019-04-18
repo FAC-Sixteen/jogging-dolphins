@@ -11,18 +11,17 @@ const router = (req, res) => {
       handler.handlePublicRoute(req, res, endpoint);
     } else if (endpoint === '/getData') {
       handler.handleGetDataRoute(req, res);
-    } else if (endpoint === '/register'){
+    } else if (endpoint === '/register') {
       handler.handleRegister(req, res);
     } else {
       handler.handle404Route(req, res);
-    } 
+    }
   } else if (method === 'POST') {
     if (endpoint === '/submit-form') {
       handler.handlePostRoute(req, res);
+    } else if (endpoint === '/register-user') {
+      handler.handleRegisterPost(req, res);
     }
-    // else if (endpoint === '/register-user') {
-    //   handler --insertRegisterHandler
-    // }
   }
 };
 
