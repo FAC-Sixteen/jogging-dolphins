@@ -5,6 +5,7 @@ const descriptionInput = document.getElementById('description');
 const lengthInput = document.getElementById('length');
 const continuityInput = document.getElementById('continuity');
 const submitButton = document.getElementById('submit');
+const registerButton = document.querySelector('.register-button');
 
 //display items
 const displayProgrammeName = document.getElementById('displayProgrammeName');
@@ -12,6 +13,9 @@ const displayDescription = document.getElementById('displayDescription');
 const displayLength = document.getElementById('displayLength');
 const displayContinuity = document.getElementById('displayContinuity');
 const displayUserName = document.getElementById('displayUserName');
+
+const newSuggestionContainer = document.querySelector('.add-new-suggestion');
+const addNewSuggestionButton = document.querySelector('.new-suggestion');
 
 window.addEventListener('load', () => {
   console.log('loaded');
@@ -44,3 +48,13 @@ const responseToFrontend = json => {
   pName(json, 'continuity', displayContinuity);
   // pName(json, 'name', displayUserName);
 };
+
+// //checks if the user is logged in or not alterts to login/register or displays the new suggestion form
+// const checkUserStatus () => {
+
+// }
+
+
+registerButton.addEventListener('click', () => {
+  window.location.href = '/register';
+});

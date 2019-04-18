@@ -93,10 +93,29 @@ const handleGetDataRoute = (req, res) => {
   });
 };
 
+const handleRegister = (req, res) => {
+  fs.readFile(
+    path.join(__dirname, '..', 'public', 'registration-form.html'),
+    (err, file) => {
+      if (err) {
+        serverError(res);
+      } else {
+        res.writeHead(200, { 'content-type': 'text/html' });
+        res.end(file);
+      }
+    }
+  );
+}
+
+
+
+
+
 module.exports = {
   handleHomeRoute,
   handle404Route,
   handlePublicRoute,
   handlePostRoute,
-  handleGetDataRoute
+  handleGetDataRoute,
+  handleRegister
 };
