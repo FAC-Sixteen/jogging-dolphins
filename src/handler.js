@@ -3,6 +3,7 @@ const path = require('path');
 const queryString = require('querystring');
 const postData = require('./queries/postData');
 const getData = require('./queries/getData');
+const encryption = require('./encryption');
 
 const serverError = res => {
   res.writeHead(500, {
@@ -119,7 +120,7 @@ const handleRegister = (req, res) => {
       }
     }
   );
-}
+};
 
 const handleLogin = (req, res) => {
   fs.readFile(
@@ -135,11 +136,20 @@ const handleLogin = (req, res) => {
       }
     }
   );
-}
+};
 
-
-
-
+const handleRegisterPost = (req, res) => {
+  let data = '';
+  req.on('data', chunk => {
+    data += chunk;
+  });
+  req.on('end', () => {
+    const regData = queryString.parse(data);
+    const userName = regData.username;
+    const password = regData.psw;
+    encryption.hashPassword(password).then(hash => console.log(hash));
+  });
+};
 
 module.exports = {
   handleHomeRoute,
@@ -148,5 +158,6 @@ module.exports = {
   handlePostRoute,
   handleGetDataRoute,
   handleRegister,
+  handleRegisterPost,
   handleLogin
 };

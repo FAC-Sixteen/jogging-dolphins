@@ -21,10 +21,9 @@ const router = (req, res) => {
   } else if (method === 'POST') {
     if (endpoint === '/submit-form') {
       handler.handlePostRoute(req, res);
+    } else if (endpoint === '/register-user') {
+      handler.handleRegisterPost(req, res);
     }
-    // else if (endpoint === '/register-user') {
-    //   handler --insertRegisterHandler
-    // }
   }
 };
 
