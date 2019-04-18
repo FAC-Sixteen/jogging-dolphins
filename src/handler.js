@@ -168,12 +168,12 @@ const handleLoginPost = (req, res) => {
     const logData = queryString.parse(data);
     const userName = logData.username;
     const password = logData.psw;
-    const hashedPass = postLogin(userName, err => {
+    const hashedPass = getLogin(userName, err => {
       if (err) return err;
-      console.log(res);
     });
     encryption.comparePasswords(password, hashedPass, err => {
       if (err) return err;
+      
       res.writeHead(302, {
         Location: '/'
       });
