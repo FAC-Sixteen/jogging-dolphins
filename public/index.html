@@ -15,7 +15,41 @@
   </head>
 
   <body>
+
+    <nav>
+      <ul>
+        <li><button class="register-button">Register</button></li>
+        <li class ="login-button">Login</li>
+      </ul>
+
+    </nav>
+
     <h1>YourTube</h1>
+    <section class="view-suggestions" id = "suggestions">
+      <h2>Current suggestions:</h2>
+      <div class="view-suggestions__table left-border">
+        <div id="displayProgrammeName" class="programmeName tableElement">
+          <h3>Programme</h3>
+        </div>
+        <div id="displayDescription" class="description tableElement">
+          <h3>Description</h3>
+        </div>
+        <div id="displayLength" class="length tableElement">
+          <h3>Length</h3>
+        </div>
+        <div id="displayContinuity" class="continuity tableElement">
+          <h3>Continuity</h3>
+        </div>
+        <!-- <div id="displayUserName" class="userName tableElement right-border">
+          <h3>Suggested by</h3>
+        </div> -->
+      </div>
+
+      <div class='add-new-suggestion'>
+          <button class="new-suggestion">New Suggestions</button>
+      </div>
+
+    </section>
 
     <section class="add-suggestions">
       <form class="add-suggestions__form" method="post" action="/submit-form">
@@ -64,27 +98,6 @@
           id="submit"
         />
       </form>
-    </section>
-
-    <section class="view-suggestions" id = "suggestions">
-      <h2>Current suggestions:</h2>
-      <div class="view-suggestions__table left-border">
-        <div id="displayProgrammeName" class="programmeName tableElement">
-          <h3>Programme</h3>
-        </div>
-        <div id="displayDescription" class="description tableElement">
-          <h3>Description</h3>
-        </div>
-        <div id="displayLength" class="length tableElement">
-          <h3>Length</h3>
-        </div>
-        <div id="displayContinuity" class="continuity tableElement">
-          <h3>Continuity</h3>
-        </div>
-        <!-- <div id="displayUserName" class="userName tableElement right-border">
-          <h3>Suggested by</h3>
-        </div> -->
-      </div>
     </section>
     <script src="public/dom.js"></script>
   </body>
