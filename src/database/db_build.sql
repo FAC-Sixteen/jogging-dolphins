@@ -13,13 +13,11 @@ CREATE TABLE users
 );
 
 INSERT INTO users
-    (name)
+    (name, password)
 VALUES
-    ('Rohan'),
-    ('Henry'
-),
-    ('Joko'
-);
+    ('Rohan', 'bread'),
+    ('Henry', 'plastic'),
+    ('Joko', 'seagull');
 
 
 CREATE TABLE programmes
@@ -33,13 +31,11 @@ CREATE TABLE programmes
 );
 
 INSERT INTO programmes
-    (programme_name, description, length, continuity)
+    (programme_name, description, length, continuity, user_id)
 VALUES
-    ('Adventure Time', 'Cartoon, comedy', 11, 'No'),
-    ('Queer Eye', 'Fabulous reality show, makeovers', 43, 'No'
-),
-    ('Big Brother Canada', 'Reality show, features real Canadians', 40, 'Yes'
-);
+    ('Adventure Time', 'Cartoon, comedy', 11, 'No', (SELECT id FROM USERS WHERE name = 'Rohan')),
+    ('Queer Eye', 'Fabulous reality show, makeovers', 43, 'No',(SELECT id FROM USERS WHERE name = 'Henry') ),
+    ('Big Brother Canada', 'Reality show, features real Canadians', 40, 'Yes', (SELECT id FROM USERS WHERE name = 'Joko'));
 
 
 COMMIT; 
