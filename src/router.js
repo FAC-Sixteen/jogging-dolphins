@@ -13,6 +13,8 @@ const router = (req, res) => {
       handler.handleGetDataRoute(req, res);
     } else if (endpoint === '/register') {
       handler.handleRegister(req, res);
+    } else if (endpoint === '/login') {
+      handler.handleLogin(req, res);
     } else {
       handler.handle404Route(req, res);
     }
