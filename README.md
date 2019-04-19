@@ -34,7 +34,7 @@ A web app for FAC members that allows the user to enter their suggestions for pr
 - PSQL
 
 ## 🏖How to set up this project?
-1. Clone this project to you local machine `https://github.com/FAC-Sixteen/jogging-dolphins/pull/15`
+1. Clone this project to you local machine `https://github.com/FAC-Sixteen/jogging-dolphins/`
 2. Install dependencies by running `npm i`
 3. Create a `config.env` file in your root directory and as us for the URL to paste inside
 
