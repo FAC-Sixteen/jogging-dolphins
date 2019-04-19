@@ -23,6 +23,8 @@ const router = (req, res) => {
       handler.handlePostRoute(req, res);
     } else if (endpoint === '/register-user') {
       handler.handleRegisterPost(req, res);
+    } else if (endpoint === '/login-user') {
+      handler.handleLoginPost(req, res);
     }
   }
 };

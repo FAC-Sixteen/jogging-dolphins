@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const queryString = require('querystring');
 const postData = require('./queries/postData');
+const postPassword = require('./queries/postPassword');
+const getLogin = require('./queries/getLogin');
 const getData = require('./queries/getData');
 const encryption = require('./encryption');
 
@@ -147,9 +149,38 @@ const handleRegisterPost = (req, res) => {
     const regData = queryString.parse(data);
     const userName = regData.username;
     const password = regData.psw;
-    encryption.hashPassword(password).then(hash => console.log(hash));
+    encryption.hashPassword(password).then(hash => postPassword(userName, hash, err => {
+      if (err) return err;
+      res.writeHead(302, {
+        Location: '/'
+      });
+      res.end();
+    }));
   });
 };
+
+const handleLoginPost = (req, res) => {
+  let data = '';
+  req.on('data', chunk => {
+    data += chunk;
+  });
+  req.on('end', () => {
+    const logData = queryString.parse(data);
+    const userName = logData.username;
+    const password = logData.psw;
+    const hashedPass = getLogin(userName, err => {
+      if (err) return err;
+    });
+    encryption.comparePasswords(password, hashedPass, err => {
+      if (err) return err;
+      
+      res.writeHead(302, {
+        Location: '/'
+      });
+      res.end();
+    })
+  })
+}
 
 module.exports = {
   handleHomeRoute,
@@ -159,5 +190,6 @@ module.exports = {
   handleGetDataRoute,
   handleRegister,
   handleRegisterPost,
-  handleLogin
+  handleLogin,
+  handleLoginPost
 };
