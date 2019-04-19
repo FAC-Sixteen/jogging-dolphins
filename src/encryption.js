@@ -9,8 +9,12 @@ const hashPassword = password => {
   })
 };
 
-const comparePasswords = (password, hashedPassword, callback) => {
-  bcrypt.compare(password, hashedPassword, callback);
+const comparePasswords = (password, hashedPassword) => {
+  return new Promise((resolve, reject) => {  
+    bcrypt.compare(password, hashedPassword)
+    .then(result => resolve(result))
+    .catch(err => reject(err));  
+  })
 };
 
 module.exports = {
