@@ -2,14 +2,11 @@ const bcrypt = require('bcryptjs');
 
 const hashPassword = password => {
   return new Promise((resolve, reject) => {
-    bcrypt.genSalt(10, (err, salt) => {
-      if (err) {
-        reject(err);
-      } else {
-        bcrypt.hash(password, salt).then(hash => resolve(hash));
-      }
-    });
-  });
+    bcrypt.genSalt(10)
+    .then(generatedSalt => bcrypt.hash(password, generatedSalt))
+    .then(hash => resolve(hash))
+    .catch(err => reject(err))
+  })
 };
 
 const comparePasswords = (password, hashedPassword, callback) => {
