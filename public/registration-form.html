@@ -23,15 +23,18 @@
       <p>Please fill in the form to create an account.</p>
 
       <label for="username">Username:</label>
-      <input type="text" placeholder="Enter username" name="username" required pattern='^[a-z0-9_-]{3,50}$'>
+      <input type="text" placeholder="Enter username" name="username" required pattern='^[a-z0-9_-]{3,50}$'
+        title='Please use only lowercase letters and numbers. Username length should be 3 to 50 characters'>
 
       <label for="psw">Password:</label>
       <input type="password" placeholder="Enter Password" name="psw" required
-        pattern='^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,8}$'>
+        pattern='^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,12}$'
+        title="Password should contain at least 1 uppercase letter, 1 lowercase letter and 1 special character. Password's length should be 4 to 12 characters.">
 
       <label for="psw-repeat">Repeat Password:</label>
       <input type="password" placeholder="Repeat Password" name="psw-repeat" required
-        pattern='^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,8}$'>
+        pattern='^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{4,12}$'
+        title="Password should contain at least 1 uppercase letter, 1 lowercase letter and 1 special character. Password's length should be 4 to 12 characters.">
 
       <label>
         <input type="submit" name="register" id='register' value="Register">
