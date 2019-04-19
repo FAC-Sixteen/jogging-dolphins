@@ -1,12 +1,11 @@
 const dbConnection = require("../database/db_connection.js");
 
-const getLogin = (name, cb) => {
-    dbConnection.query(`SELECT password FROM users WHERE name = '${name}';`,
-        (err, res) => {
-            if (err) cb(err);
-            const hashedPassword = res.rows.slice();
-            cb(null, hashedPassword);
-        });
+const getLogin = (name, password) => {
+    return new Promise ((resolve, reject) => {
+    dbConnection.query(`SELECT password FROM users WHERE name = '${name}';`)
+    .then(pwArray => resolve([pwArray.rows.slice(), password]))
+    .catch(err => reject(err))
+    })
 };
 
 module.exports = getLogin;

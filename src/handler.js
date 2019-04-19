@@ -149,13 +149,13 @@ const handleRegisterPost = (req, res) => {
     const regData = queryString.parse(data);
     const userName = regData.username;
     const password = regData.psw;
-    encryption.hashPassword(password).then(hash => postPassword(userName, hash, err => {
-      if (err) return err;
-      res.writeHead(302, {
-        Location: '/'
-      });
+    encryption.hashPassword(password)
+    .then(hash => postPassword(userName, hash))
+    .then( () => {
+      res.writeHead(302, {Location: '/'});
       res.end();
-    }));
+  })
+    // .catch(err => reject(err));
   });
 };
 
@@ -168,19 +168,21 @@ const handleLoginPost = (req, res) => {
     const logData = queryString.parse(data);
     const userName = logData.username;
     const password = logData.psw;
-    const hashedPass = getLogin(userName, err => {
-      if (err) return err;
-    });
-    encryption.comparePasswords(password, hashedPass, err => {
-      if (err) return err;
-      
-      res.writeHead(302, {
-        Location: '/'
-      });
-      res.end();
+    getLogin(userName, password)
+    .then(pwArray => encryption.comparePasswords(pwArray[1], pwArray[0][0].password))
+    .then(result => {
+      if (result == false){
+        console.log(result);
+      } 
+      else {
+        res.writeHead(302, { Location: '/'});
+        res.end();
+      }
     })
+    // .catch(err => reject(err));
   })
 }
+
 
 module.exports = {
   handleHomeRoute,
